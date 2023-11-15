@@ -1,0 +1,760 @@
+<html dir="ltr" lang="pt">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="telephone=no" name="format-detection">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+    <!-- ./fonts -->
+
+    <style>
+        @import 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700';
+    </style>
+
+    <style type="text/css">
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        html {
+            height: 100%;
+            overflow: visible;
+        }
+
+        body {
+            width: 21cm;
+            height: 100%;
+            position: relative;
+            margin: 0;
+            padding: 0 0;
+            color: #333;
+            line-height: 22px;
+            font: 13px "Ubuntu", Arial;
+            font-style: normal
+        }
+
+        h1 {
+            font: 30px "Slabo 27px", Arial;
+            margin: 0;
+            padding: 25px 0 5px 0;
+            font-weight: 600
+        }
+
+        h1 span {
+            position: relative;
+            font-style: normal;
+            display: inline;
+            margin-right: 1px;
+            padding: 0
+        }
+
+        h2 {
+            font: 16px "Slabo 27px", Arial;
+
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 0;
+            padding: 0
+        }
+
+        h3 {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0;
+            padding: 0
+        }
+
+        p {
+            color: #4c4c4c;
+            line-height: 18px;
+            font-weight: 400;
+            margin: 0;
+            padding: 0
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background: #d2d2d2
+        }
+
+        .sections {
+            left: 40px;
+            position: relative;
+            width: 715px
+        }
+
+        .section {
+            position: relative;
+            width: 100%;
+            padding: 0
+        }
+
+        .section p {
+            display: block;
+            font-style: normal
+        }
+
+        .section:last-child {
+            border: none
+        }
+
+        .section.section--summary {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #d2d2d2
+        }
+
+        .section.section--summary .section--content {
+            padding-top: 0;
+            padding-left: 0
+        }
+
+        .section--name {
+            position: relative
+        }
+
+        .section--name.has--avatar h1 {
+            padding-left: 70px
+        }
+
+        .section--avatar {
+            display: inline-block;
+            position: absolute;
+            top: 15px;
+            padding: 0;
+            margin: 0;
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            -webkit-background-size: cover !important;
+            background-size: cover !important
+        }
+
+        .section--title {
+            display: block;
+            position: relative;
+            z-index: 99;
+            margin: 20px 0 0 0;
+            background: #fff;
+            padding: 15px 0 15px 0;
+            page-break-inside: avoid;
+            border-top: 2px solid #d2d2d2
+        }
+
+        .section--title span {
+            display: inline-block;
+            margin-right: 0
+        }
+
+        .section--heading-group {
+            display: block;
+            padding: 15px 0 0 150px;
+            margin: 0;
+            page-break-inside: avoid
+        }
+
+        .section--list {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .section--list.no-indent .section--item .section--heading-group {
+            padding-left: 0
+        }
+
+        .section--list.no-indent .section--item .section--content {
+            padding-left: 0
+        }
+
+        .section--list.section--list-skills .section--sub-heading {
+            padding-top: 0;
+            max-width: 120px;
+            text-align: right;
+            font-style: normal
+        }
+
+        .section--list.section--list-skills .section--heading-group {
+            padding-left: 0
+        }
+
+        .section--list.section--list-skills .section--date {
+            left: 150px;
+            text-align: left;
+            font-weight: 700
+        }
+
+        .section--item {
+            display: block;
+            position: relative;
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .section--item:first-child .section--heading-group {
+            padding-top: 0
+        }
+
+        .section--item:first-child .section--heading-group .section--date {
+            top: 0
+        }
+
+        .skills--label {
+            display: inline-block;
+            width: 175px;
+            margin: 5px 0 0 -5px
+        }
+
+        .skills--level {
+            display: inline-block;
+            position: relative;
+            top: 0;
+            height: 7px;
+            width: 150px;
+            padding: 0;
+            margin: 0;
+            background: #eaeaea;
+            border-radius: 6px
+        }
+
+        .skills--level-filler {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #b1b1b1;
+            border-radius: 6px
+        }
+
+        .skills--stars {
+            display: inline-block;
+            position: relative;
+            top: 4px
+        }
+
+        .skills--stars svg {
+            fill: #b1b1b1
+        }
+
+        .skills--stars svg.active {
+            fill: #2b2b38
+        }
+
+        .section--date {
+            position: absolute;
+            left: 0;
+            text-align: right;
+            top: 15px;
+            width: 120px;
+            font-size: 13px;
+            padding: 0;
+            margin: 0
+        }
+
+        .section--heading {
+            display: block;
+            padding: 0;
+            margin: 0
+        }
+
+        .section--sub-heading {
+            display: block;
+            padding: 3px 0 0 0;
+            margin: 0;
+            font-style: italic;
+            font-size: 13px
+        }
+
+        .section--content {
+            display: block;
+            padding: 5px 0 0 150px;
+            margin: 0
+        }
+
+        .section--content p {
+            display: block
+        }
+
+        .section--content ol, .section--content ul {
+            white-space: normal;
+            font-weight: 400;
+            list-style-position: outside;
+            color: #4c4c4c;
+            margin: 0;
+            padding: 0 0 0 16px
+        }
+
+        .section--content ol li, .section--content ul li {
+            line-height: 18px
+        }
+
+        .section--content ul li {
+            list-style-type: disc
+        }
+
+        .section--content ol {
+            padding-left: 14px
+        }
+
+        .section--content-single-textarea {
+            padding-left: 0
+        }
+
+        .c--333333 h1, .c--333333 h2 {
+            color: #333 !important
+        }
+
+        .c--da4453 h1, .c--da4453 h2 {
+            color: #da4453 !important
+        }
+
+        .c--3f6592 h1, .c--3f6592 h2 {
+            color: #3f6592 !important
+        }
+
+        .c--82652b h1, .c--82652b h2 {
+            color: #82652b !important
+        }
+
+        .c--37bc9b h1, .c--37bc9b h2 {
+            color: #37bc9b !important
+        }
+
+        /* Direction RTL overrides */
+        html[dir="rtl"] h1 span {
+            margin-right: initial;
+            margin-left: 1px;
+        }
+
+        html[dir="rtl"] .sections {
+            left: initial;
+            right: 40px;
+        }
+
+        html[dir="rtl"] .section.section--summary .section--content {
+            padding-left: initial;
+            padding-right: 0;
+        }
+
+        html[dir="rtl"] .section--name.has--avatar h1 {
+            padding-left: initial;
+            padding-right: 70px;
+        }
+
+        html[dir="rtl"] .section--title span {
+            margin-right: initial;
+            margin-left: 0;
+        }
+
+        html[dir="rtl"] .section--heading-group {
+            padding: 15px 150px 0 0;
+        }
+
+        html[dir="rtl"] .section--list.no-indent .section--item .section--heading-group {
+            padding-left: initial;
+            padding-right: 0;
+        }
+
+        html[dir="rtl"] .section--list.no-indent .section--item .section--content {
+            padding-left: initial;
+            padding-right: 0;
+        }
+
+        html[dir="rtl"] .section--list.section--list-skills .section--sub-heading {
+            text-align: left;
+        }
+
+        html[dir="rtl"] .section--list.section--list-skills .section--heading-group {
+            padding-left: initial;
+            padding-right: 0;
+        }
+
+        html[dir="rtl"] .section--list.section--list-skills .section--date {
+            left: initial;
+            right: 150px;
+            text-align: right;
+        }
+
+        html[dir="rtl"] .skills--label {
+            margin-right: -5px;
+            margin-left: initial;
+        }
+
+        html[dir="rtl"] .skills--level-filler {
+            left: initial;
+            right: 0;
+        }
+
+        html[dir="rtl"] .section--date {
+            left: initial;
+            right: 0;
+            text-align: left;
+        }
+
+        html[dir="rtl"] .section--content {
+            padding: 5px 150px 0 0;
+        }
+
+        html[dir="rtl"] .section--content ol, html[dir="rtl"] .section--content ul {
+            padding-left: initial;
+            padding-right: 16px;
+        }
+
+        html[dir="rtl"] .section--content ol {
+            padding-left: initial;
+            padding-right: 14px;
+        }
+
+        html[dir="rtl"] .section--content-single-textarea {
+            padding-left: initial;
+            padding-right: 0;
+        }
+
+        /* Ara lang overrides */
+        html[lang="ara"] body,
+        html[lang="ara"] h1,
+        html[lang="ara"] h2 {
+            font-family: "Noto Sans Arabic", sans-serif;
+        }
+    </style>
+    <title>Veja o meu portifólio</title>
+
+
+</head>
+<body class="c--3f6592">
+
+<section class="sections">
+
+    <div class="section--name  ">
+
+
+        <h1>Oberdan Brito</h1>
+    </div>
+
+
+    <div class="section">
+        <div class="section--title">
+            <h2>
+                Pessoal
+            </h2>
+        </div>
+
+        <ol class="section--list">
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Nome
+                    </div>
+                    <div class="section--heading">
+                        <h3>
+                            Oberdan Brito de Jesus OBJ
+                        </h3>
+                    </div>
+                </div>
+            </li>
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Endereço
+                    </div>
+                    <div class="section--heading">
+                        <h3>Rua George Rexroth, 706, 09951-270 Diadema
+                        </h3>
+                    </div>
+                </div>
+            </li>
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Número de telefone
+                    </div>
+                    <div class="section--heading">
+                        <h3><span dir="ltr">+5511995810657</span></h3>
+                    </div>
+                </div>
+            </li>
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Email
+                    </div>
+                    <div class="section--heading">
+                        <h3>oberdanbdj@gmail.com</h3>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Data de nascimento
+                    </div>
+                    <div class="section--heading">
+                        <h3>
+                            17-02-1978
+                        </h3>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Local de nascimento
+                    </div>
+                    <div class="section--heading">
+                        <h3>São Bernardo do Campo</h3>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Sexo
+                    </div>
+                    <div class="section--heading">
+                        <h3> Masculino
+                        </h3>
+                    </div>
+                </div>
+            </li>
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Nacionalidade
+                    </div>
+                    <div class="section--heading">
+                        <h3>Brasileiro</h3>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Estado civil
+                    </div>
+                    <div class="section--heading">
+                        <h3>
+                            Casado
+                        </h3>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Website
+                    </div>
+                    <div class="section--heading">
+                        <h3>https://github.com/oberdanbrito</h3>
+                    </div>
+                </div>
+            </li>
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        LinkedIn
+                    </div>
+                    <div class="section--heading">
+                        <h3>https://www.linkedin.com/in/oberdanbrito/</h3>
+                    </div>
+                </div>
+            </li>
+
+
+        </ol>
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="section--title">
+            <h2>
+                Objetivo e Resumo Profissional
+            </h2>
+        </div>
+
+        <div class="section--content section--content-single-textarea">
+            <p>Sou apaixonado por tecnologia. Encontro prazer na atividade que desempenho. Meu principal objetivo é contribuir ativamente em uma equipe de desenvolvimento de grande porte. Busco compartilhar minha bagagem de vida com os colegas, pois acredito que a tecnologia é uma aliada crucial para os negócios.</p>
+            <p>Com mais de uma década dedicado ao desenvolvimento de softwares e soluções tecnológicas, tenho me concentrado em capacitar clientes e parceiros para impulsionar seus empreendimentos. Atuo em diversos contextos estratégicos, fornecendo orientação e suporte às equipes de tecnologia, seja por meio de mentoria ou consultoria. Minha responsabilidade primordial é assegurar a entrega pontual de softwares profissionais, mantendo um padrão de qualidade excepcional.</p>
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="section--title">
+            <h2>
+                Experiência profissional
+            </h2>
+        </div>
+
+
+        <ol class="section--list">
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">Set 1999 - Mar 2003</div>
+                    <div class="section--heading">
+                        <h3>Analista MIS</h3>
+                    </div>
+                    <div class="section--sub-heading">
+                        C&amp;A Modas, São Bernardo do Campo
+                    </div>
+                </div>
+                <div class="section--content">
+                    <p>1999 a 2003 – Sistemas de controle para call centers – recuperação de crédito:</p>
+                    <p>Construção de mailings, construção e leitura de layouts para carga de sistemas legados</p>
+                    <p>Automação de planilhas (Carteira, faixa de atraso, Capacity planning, Daily, Taxa de rolagem
+                        “roll rate”, indicadores de atraso, distribuição de carteira, taxa de acordo efetivo), extração
+                        e preparação para carga de informações em sistemas legados.</p>
+                </div>
+            </li>
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">Abr 2003 - Ago 2005</div>
+                    <div class="section--heading">
+                        <h3>Analista de recuperação de crédito</h3>
+                    </div>
+                    <div class="section--sub-heading">
+                        Banco ibi, Barueri/Alphaville
+                    </div>
+                </div>
+                <div class="section--content">
+                    <p>2003 a 2005 – Sistemas de controle para área de recuperação de crédito bancário:</p>
+                    <p>Extração de dados para construção de relatórios “w.o monitoring” e “forecast”, tratamento de
+                        layouts, implantação outsourcing de operações em call centers, auditoria de bases e
+                        principalmente desenvolvimento de softwares Data Mining e DataWare</p>
+                </div>
+            </li>
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">Ago 2005 - Jun 2008</div>
+                    <div class="section--heading">
+                        <h3>Gerente de TI</h3>
+                    </div>
+                    <div class="section--sub-heading">
+                        Alphavox, Guarulhos/Alphaville
+                    </div>
+                </div>
+                <div class="section--content">
+                    <p>2005 a 2008 – Desenvolvimento de sistemas para call centers – recuperação de crédito:</p>
+                    <p>Construção de sistemas personalizados para vendas, análise de crédito, indicadores de produção,
+                        gestão de log “gravações de áudio”, auditorias de produção, sistemas para análise e previsão de
+                        fraude, integração de bases e construção de Data Mining</p>
+                </div>
+            </li>
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">Jun 2008 - Presente</div>
+                    <div class="section--heading">
+                        <h3>Sócio/Diretor</h3>
+                    </div>
+                    <div class="section--sub-heading">
+                        Craos.NET, São Bernardo do Campo
+                    </div>
+                </div>
+                <div class="section--content">
+                    <p>2008 a 2013 – Desenvolvimento sob demanda para escritórios diversificados, sistemas standalone&nbsp;de
+                        atendimento ao publico, preparação de layouts de integração de sistemas, sistemas para área da
+                        indústria e varejo.</p>
+                    <p><br></p>
+                    <p>2013 a 2020 – Desenvolvimento de sistemas de controle de acesso com foco em condomínios
+                        residenciais, gestão de condôminos, sistemas para gestão de estacionamentos, ocorrências,
+                        mensageira e sorteios de vagas de garagem.</p>
+                    <p><br></p>
+                    <p>2022 - atual – Desenvolvimento de soluções customizadas para área de medicina ocupacional,
+                        integração de sistemas Microsoft Graph, Exchange, Sharepoint, Aplicações Azure e Amazon S3</p>
+                    <p class="ql-align-center"><br></p>
+                    <p><br></p>
+                    <p><br></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+
+    <div class="section">
+
+        <div class="section--title">
+            <h2>
+                Formação e Qualificações
+            </h2>
+        </div>
+
+        <ol class="section--list">
+
+            <li class="section--item">
+                <div class="section--heading-group">
+                    <div class="section--date">
+                        Jan 1999 - Ago 2004
+                    </div>
+                    <div class="section--heading">
+                        <h3>Superior completo</h3>
+                    </div>
+                    <div class="section--sub-heading">
+                        Centro Universitário Santo André - Unia, Santo André
+                    </div>
+                </div>
+                <div class="section--content">
+                    <p>Formação bacharelado e em Licenciatura de Psicologia</p>
+                </div>
+            </li>
+        </ol>
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="section--title">
+            <h2>
+                Conhecimentos em Tecnologias
+            </h2>
+        </div>
+
+        <div class="section--content section--content-single-textarea">
+            <ul>
+                <li>Linguagens de programação: JavaScript, C#, PHP, Dart, Visual Basic, VB.NET, C, C++, Bash</li>
+                <li>Banco de dados relacional: PostgreSQL (Avançado), SQL Server, SQLite</li>
+                <li>Banco de dados noSQL: Firestore, indexddb, casandra</li>
+                <li>Sistemas operacionais: Linux (Avançado), MacOs (Avançado) MS Windows, Windows Server</li>
+                <li>Principais tecnologias e frameworks: NodeJS, Flutter, construção de APIs, integração de sistemas, scripts de automação em bash e serviços</li>
+                <li>Conhecimentos em HTML, CSS, Bootstrap, MDB</li>
+                <li>Conhecimentos avançados em todas as ferramentas do Microsoft Office</li>
+                <li>Boas praticas de desenvolvimento usando Scrun, GIT, GITHUB, Jira</li>
+                <li>Experiente em implantações de sistemas: Instalação de sistemas operacionais, configuração de Apache, SSL e roteamento de serviços</li>
+            </ul>
+        </div>
+    </div>
+
+
+</section>
+
+
+</body>
+</html>
